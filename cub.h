@@ -6,7 +6,7 @@
 /*   By: ebakchic <ebakchic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 20:30:49 by ebakchic          #+#    #+#             */
-/*   Updated: 2023/03/07 03:42:45 by ebakchic         ###   ########.fr       */
+/*   Updated: 2023/03/07 23:46:51 by ebakchic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <mlx.h>
+# include <math.h>
 
 typedef struct s_list
 {
@@ -30,6 +31,7 @@ typedef struct s_list
 	int		yc;
 	int		lenx;
 	int		leny;
+	double	angle;
 }	t_list;
 
 void	*ft_calloc(size_t nmemb, size_t size);
@@ -45,5 +47,9 @@ char	*ft_strchr(const char *s, int c);
 
 int	ft_manage_key(int k, t_list *s);
 size_t	ft_strlen(const char *s);
+
+void	ft_read_img(t_list *s);
+void	ft_fill_map(t_list *s);
+void	ft_put_pixel(t_list *s);
 
 #endif

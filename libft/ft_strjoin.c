@@ -6,7 +6,7 @@
 /*   By: ebakchic <ebakchic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 15:44:56 by ebakchic          #+#    #+#             */
-/*   Updated: 2023/03/06 21:46:03 by ebakchic         ###   ########.fr       */
+/*   Updated: 2023/03/07 22:33:07 by ebakchic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	ft_memmove(str, s1, lens1);
 	ft_memmove(str + lens1, s2, lens2);
 	str[lens1 + lens2 + 1] = '\0';
-	free(s1);
+	// free(s1);
 	return (str);
 }

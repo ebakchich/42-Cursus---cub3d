@@ -6,7 +6,7 @@
 /*   By: ebakchic <ebakchic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 20:30:26 by ebakchic          #+#    #+#             */
-/*   Updated: 2023/03/07 03:30:18 by ebakchic         ###   ########.fr       */
+/*   Updated: 2023/03/08 00:53:44 by ebakchic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	**ft_add_map(int fd)
 		if (rb != 0)
 			saver = ft_strjoin(saver, buff);
 	}
-	free(buff);
+	// free(buff);
 	map = ft_split(saver, '\n');
 	free(saver);
 	return (map);
@@ -43,15 +43,15 @@ char	**ft_add_map(int fd)
 
 int	main(int ac, char **av)
 {
-	t_list	*s;
+	t_list	s;
 	int		fd;
 
+	s.angle = M_PI_2;
 	(void)ac;
-	s = malloc(sizeof(t_list));
 	fd = open(av[1], O_RDONLY);
-	s->map = ft_add_map(fd);
+	s.map = ft_add_map(fd);
 	close(fd);
-	ft_run_game(s);
-	ft_free_db(s->map);
+	ft_run_game(&s);
+	// ft_free_db(s.map);
 	return (0);
 }

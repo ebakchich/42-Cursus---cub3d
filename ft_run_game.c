@@ -6,7 +6,7 @@
 /*   By: ebakchic <ebakchic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:48:00 by ebakchic          #+#    #+#             */
-/*   Updated: 2023/03/07 04:04:51 by ebakchic         ###   ########.fr       */
+/*   Updated: 2023/03/08 01:07:58 by ebakchic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,11 @@ void	ft_run_game(t_list *s)
 	s->xc = (s->lenx * 25) / 2;
 	s->yc = (s->leny * 25) / 2;
 	s->mlx = mlx_init();
-	s->win = mlx_new_window(s->mlx, s->lenx * 25, s->leny * 25, "cub3D");
+	s->win = mlx_new_window(s->mlx, s->lenx * 25, s->leny * 25, "cub");
 	ft_read_img(s);
 	ft_fill_map(s);
-	// ft_put_pixel(s);
-	mlx_key_hook(s->win, ft_manage_key, &s);
+	ft_put_pixel(s);
+	// mlx_hook(s->win, 2, 1L << 0, ft_manage_key, s);
+	mlx_key_hook(s->win, ft_manage_key, s);
 	mlx_loop(s->mlx);
 }
