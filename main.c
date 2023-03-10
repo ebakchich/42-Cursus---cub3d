@@ -6,7 +6,7 @@
 /*   By: ebakchic <ebakchic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 20:30:26 by ebakchic          #+#    #+#             */
-/*   Updated: 2023/03/08 00:53:44 by ebakchic         ###   ########.fr       */
+/*   Updated: 2023/03/09 08:04:44 by ebakchic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int	main(int ac, char **av)
 	t_list	s;
 	int		fd;
 
-	s.angle = M_PI_2;
 	(void)ac;
+	s.ang = M_PI_2;
 	fd = open(av[1], O_RDONLY);
 	s.map = ft_add_map(fd);
 	close(fd);
